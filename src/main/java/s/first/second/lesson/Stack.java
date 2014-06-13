@@ -1,4 +1,4 @@
-package s;
+package s.first.second.lesson;
 
 public class Stack {
 

@@ -1,6 +1,8 @@
 package s;
 
 
+import s.first.second.lesson.Stack;
+
 import static org.junit.Assert.assertTrue;
 
 public class StackTest {
