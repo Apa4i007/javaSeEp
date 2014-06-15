@@ -8,7 +8,7 @@ public class ArrayStack<E> extends AbstractStack<E> implements Stack<E> {
     }
 
     @Override
-    protected E popS() {
+    public E popS() {
         return elements[size];
     }
 
