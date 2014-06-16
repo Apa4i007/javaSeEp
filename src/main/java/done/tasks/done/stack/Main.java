@@ -1,4 +1,4 @@
-package s.third.lesson;
+package done.tasks.done.stack;
 
 public class Main {
     public static void fill(Stack<String> stack) {

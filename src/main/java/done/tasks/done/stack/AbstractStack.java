@@ -1,4 +1,4 @@
-package s.third.lesson;
+package done.tasks.done.stack;
 
 public abstract class AbstractStack<E> implements Stack<E> {
     protected int size;

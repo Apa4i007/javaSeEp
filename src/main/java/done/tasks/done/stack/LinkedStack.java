@@ -1,4 +1,4 @@
-package s.third.lesson;
+package done.tasks.done.stack;
 
 public class LinkedStack<E> extends AbstractStack<E> {
     private Node<E> head;

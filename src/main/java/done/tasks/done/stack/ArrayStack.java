@@ -1,4 +1,4 @@
-package s.third.lesson;
+package done.tasks.done.stack;
 
 public class ArrayStack<E> extends AbstractStack<E> implements Stack<E> {
     private E[] elements;
