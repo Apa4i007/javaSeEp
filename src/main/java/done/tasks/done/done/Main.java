@@ -1,5 +1,6 @@
 package done.tasks.done.done;
 
+
 public class Main {
     public static void main(String[] args) throws Throwable {
         MyArrayList<String> list =
@@ -17,5 +18,8 @@ public class Main {
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
+        int x = 10;
+        System.out.println(x++ + ++x);
+        Object o = new Object();
     }
 }

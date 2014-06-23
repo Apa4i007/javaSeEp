@@ -50,10 +50,7 @@ public class MyArrayList <E> extends AbstractList<E> {
     }
 
     private boolean checkRangeForIncrease(int capacity) {
-        if (elements.length >= capacity) {
-            return true;
-        }
-        return false;
+        return elements.length >= capacity;
     }
 
     private void rangeCheck(int index) {
