@@ -3,47 +3,36 @@ package done.tasks.done.tree;
 import com.sun.org.apache.xml.internal.utils.Hashtree2Node;
 import sun.reflect.generics.tree.Tree;
 
+import java.io.*;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class BinaryTree {
+    protected int size;
     Node root;
+
     public void addNode(int key, String name) {
-        // Create a new Node and initialize it
+
         Node newNode = new Node(key, name);
-        // If there is no root this becomes root
         if (root == null) {
             root = newNode;
         } else {
-            // Set root as the Node we will start
-            // with as we traverse the tree
             Node focusNode = root;
-            // Future parent for our new Node
             Node parent;
             while (true) {
-                // root is the top parent so we start
-                // there
                 parent = focusNode;
-                // Check if the new node should go on
-                // the left side of the parent node
                 if (key < focusNode.key) {
-                    // Switch focus to the left child
                     focusNode = focusNode.leftChild;
-                    // If the left child has no children
                     if (focusNode == null) {
-                        // then place the new node on the left of it
                         parent.leftChild = newNode;
-                        return; // All Done
+                        return;
                     }
-                } else { // If we get here put the node on the right
+                } else {
                     focusNode = focusNode.rightChild;
-                    // If the right child has no children
                     if (focusNode == null) {
-                        // then place the new node on the right of it
                         parent.rightChild = newNode;
-                        return; // All Done
-
+                        return;
                     }
-
                 }
 
             }
@@ -51,25 +40,11 @@ public class BinaryTree {
 
     }
 
-    // All nodes are visited in ascending order
-    // Recursion is used to go to one node and
-    // then go to its child nodes and so forth
-
     public void inOrderTraverseTree(Node focusNode) {
         if (focusNode != null) {
-
-            // Traverse the left node
-
             inOrderTraverseTree(focusNode.leftChild);
-
-            // Visit the currently focused on node
-
             System.out.println(focusNode);
-
-            // Traverse the right node
-
             inOrderTraverseTree(focusNode.rightChild);
-
         }
 
     }
@@ -91,20 +66,13 @@ public class BinaryTree {
     }
 
     public Node findNode(int key) {
-        // Start at the top of the tree
         Node focusNode = root;
-        // While we haven't found the Node
-        // keep looking
         while (focusNode.key != key) {
-            // If we should search to the left
             if (key < focusNode.key) {
-                // Shift the focus Node to the left child
                 focusNode = focusNode.leftChild;
             } else {
-                // Shift the focus Node to the right child
                 focusNode = focusNode.rightChild;
             }
-            // The node wasn't found
             if (focusNode == null)
                 return null;
         }
@@ -121,7 +89,6 @@ public class BinaryTree {
         theTree.addNode(75, "Sales Manager");
         theTree.addNode(85, "Salesman 1");
 
-        // Different ways to traverse binary trees
 
         // theTree.inOrderTraverseTree(theTree.root);
 
@@ -129,14 +96,11 @@ public class BinaryTree {
 
         // theTree.postOrderTraverseTree(theTree.root);
 
-        // Find the node with key 75
-
         System.out.println("\nNode with the key 50");
+        Node node = theTree.findNode(75);
+        System.out.println(node + " " + node.leftChild + " " + node.rightChild);
 
-        System.out.println(theTree.findNode(50));
-        Set s = new HashSet(2147483647);
-        s.add("Swat");
-        System.out.println(s.size());
+
     }
 }
 

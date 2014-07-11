@@ -16,10 +16,6 @@ class Node {
 
     public String toString() {
         return name + " has the key " + key;
-		/*
-		 * return name + " has the key " + key + "\nLeft Child: " + leftChild +
-		 * "\nRight Child: " + rightChild + "\n";
-		 */
     }
 
 }

@@ -2,6 +2,7 @@ package done.tasks.done.stack;
 
 public class LinkedStack<E> extends AbstractStack<E> {
     private Node<E> head;
+
     @Override
     protected E popS() {
         final E value = head.value;
@@ -31,8 +32,5 @@ public class LinkedStack<E> extends AbstractStack<E> {
             this.next = next;
             this.value = value;
         }
-
-
-
     }
 }
