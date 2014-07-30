@@ -41,7 +41,8 @@ public class HashMapImpl {
         int initialHash = -1;
         int indexOfDeletedEntry = -1;
         while (hash != initialHash
-                && (table[hash] == DeletedEntry.getUniqueDeletedEntry()
+                && (table[hash]
+                == DeletedEntry.getUniqueDeletedEntry()
                 || table[hash] != null
                 && table[hash].getKey() != key)) {
             if (initialHash == -1)
@@ -64,6 +65,14 @@ public class HashMapImpl {
             }
         if (size >= maxSize)
             resize();
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     private void resize() {
@@ -94,22 +103,5 @@ public class HashMapImpl {
             size--;
         }
     }
-
-    public void printHashTable ()
-    {
-        System.out.println();
-        for (int i = 0; i < table.length; i++)
-        {
-            System.out.print ("Bucket " + i + ":  ");
-            HashEntry start = table[i];
-            while(start != null)
-            {
-                System.out.print(start.getKey() +" ");
-//                start = start.next;
-            }
-            System.out.println();
-        }
-    }
-
 
 }
