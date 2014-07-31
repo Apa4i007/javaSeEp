@@ -43,13 +43,6 @@ public class HashMapImplTest {
         assertEquals(hashMap.getSize(), 2);
     }
 
-    private HashMapImpl createTestHashMap() {
-        HashMapImpl hashMap = new HashMapImpl();
-        hashMap.put(1, 11);
-        hashMap.put(2, 22);
-        return hashMap;
-    }
-
     @Test
     public void testPutWithResize() throws Exception {
         //given
@@ -69,6 +62,13 @@ public class HashMapImplTest {
 
         //then
         assertEquals(hashMap.get(1), -1);
+    }
+
+    private HashMapImpl createTestHashMap() {
+        HashMapImpl hashMap = new HashMapImpl();
+        hashMap.put(1, 11);
+        hashMap.put(2, 22);
+        return hashMap;
     }
 
 }
